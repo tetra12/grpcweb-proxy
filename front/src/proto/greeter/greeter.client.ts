@@ -30,15 +30,12 @@ import type { RpcOptions } from "@protobuf-ts/runtime-rpc";
  * @generated from protobuf service greeter.Greeter
  */
 export interface IGreeterClient {
-  /**
-   * Sends a greeting
-   *
-   * @generated from protobuf rpc: SayHello(greeter.HelloRequest) returns (greeter.HelloReply);
-   */
-  sayHello(
-    input: HelloRequest,
-    options?: RpcOptions
-  ): UnaryCall<HelloRequest, HelloReply>;
+    /**
+     * Sends a greeting
+     *
+     * @generated from protobuf rpc: SayHello(greeter.HelloRequest) returns (greeter.HelloReply);
+     */
+    sayHello(input: HelloRequest, options?: RpcOptions): UnaryCall<HelloRequest, HelloReply>;
 }
 /**
  * The greeting service definition.
@@ -46,27 +43,18 @@ export interface IGreeterClient {
  * @generated from protobuf service greeter.Greeter
  */
 export class GreeterClient implements IGreeterClient, ServiceInfo {
-  typeName = Greeter.typeName;
-  methods = Greeter.methods;
-  options = Greeter.options;
-  constructor(private readonly _transport: RpcTransport) {}
-  /**
-   * Sends a greeting
-   *
-   * @generated from protobuf rpc: SayHello(greeter.HelloRequest) returns (greeter.HelloReply);
-   */
-  sayHello(
-    input: HelloRequest,
-    options?: RpcOptions
-  ): UnaryCall<HelloRequest, HelloReply> {
-    const method = this.methods[0],
-      opt = this._transport.mergeOptions(options);
-    return stackIntercept<HelloRequest, HelloReply>(
-      "unary",
-      this._transport,
-      method,
-      opt,
-      input
-    );
-  }
+    typeName = Greeter.typeName;
+    methods = Greeter.methods;
+    options = Greeter.options;
+    constructor(private readonly _transport: RpcTransport) {
+    }
+    /**
+     * Sends a greeting
+     *
+     * @generated from protobuf rpc: SayHello(greeter.HelloRequest) returns (greeter.HelloReply);
+     */
+    sayHello(input: HelloRequest, options?: RpcOptions): UnaryCall<HelloRequest, HelloReply> {
+        const method = this.methods[0], opt = this._transport.mergeOptions(options);
+        return stackIntercept<HelloRequest, HelloReply>("unary", this._transport, method, opt, input);
+    }
 }

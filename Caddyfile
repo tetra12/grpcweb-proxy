@@ -1,0 +1,21 @@
+{
+  debug
+  # auto_https disable_certs
+
+  servers {
+    protocol {
+      # We need to enable h2c in order to use grpc without TLS.
+      # ref: https://caddy.community/t/caddy-grpc-h2c-passthrough/11780
+      allow_h2c
+    }
+  }
+}
+
+http://localhost:5052 {
+
+  reverse_proxy h2c://192.168.1.93:50051 {
+    transport http {
+      dial_timeout 5s
+    }
+  }
+}
