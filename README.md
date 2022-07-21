@@ -24,7 +24,8 @@
 1. Generate protobuf defs for backend: `make genback`
 2. Generate protobuf defs for frontend: `make genfront`
 3. Run a backend service: `make runserver`
-4. Validate GRPC server availability: `make runclient`
-5. Update and run caddy: `caddy start`
-6. Start the Web Browser: `make runfront`
-7. Open a web Browser with the proper address e.g. `localhost:5137`, press F12 to open a console and watch the network calls
+4. Validate GRPC server availability using a direct GRPC link (no proxy): `make runclient`
+5. Optional: run caddy: `caddy start`
+6. Run envoy proxy: `make runproxy`
+7. Start the Web Browser: `make runfront`
+8. Open a web Browser with the proper address e.g. `localhost:5137`, press F12 to open a console and watch the network calls

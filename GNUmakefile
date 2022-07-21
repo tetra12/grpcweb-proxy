@@ -1,5 +1,5 @@
 genfront:
-	@./scripts/genfront.sh
+	@cd front && yarn protogen
 
 genback:
 	@./scripts/genback.sh
