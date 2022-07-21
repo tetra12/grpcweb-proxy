@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  proxy:
+    image: caddy:2.5.2-alpine
+    container_name: proxy
+    ports:
+      - 5452:5452
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - /mnt/caddy/caddy_data:/data
+      - /mnt/caddy/caddy_config:/config
