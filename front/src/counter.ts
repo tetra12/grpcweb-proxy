@@ -1,12 +1,12 @@
-import { HelloRequest } from "./proto/greeter/greeter";
 import greeter from "./client";
+import { HelloRequest } from "./proto/greeter/greeter";
 
 const greet = () => {
-  const req: HelloRequest = { name: "Blah" };
+  const req: HelloRequest = { name: "Friend" };
 
-  const res = greeter.sayHello(req);
-
-  console.log(`*** Server Response Code: ${res.status}`);
+  greeter.sayHello(req).then((res) => {
+    console.log(res.response.message);
+  });
 };
 
 export function setupCounter(element: HTMLButtonElement) {

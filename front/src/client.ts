@@ -1,7 +1,7 @@
 import { GrpcWebFetchTransport } from "@protobuf-ts/grpcweb-transport";
 import { GreeterClient } from "./proto/greeter/greeter.client";
 
-const URL = "http://localhost:5052";
+const URL = "http://localhost:5452";
 
 const web = new GrpcWebFetchTransport({
   baseUrl: `${URL}`,
