@@ -18,6 +18,7 @@
 ### Dependencies
 
 - Install Yarn 1.x from [here](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable)
+- Install Protobuf Compiler For Linux/Mac from [here](https://github.com/protocolbuffers/protobuf/releases)
 
 ### Usage
 
