@@ -17,11 +17,22 @@
 
 ### Dependencies
 
+- Node 18x from [here](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
 - Install Yarn 1.x from [here](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable)
 - Install Protobuf Compiler For Linux/Mac from [here](https://github.com/protocolbuffers/protobuf/releases)
 
+### Tech Stack
+
+- node -v <br>
+  v18.6.0
+- yarn -v <br>
+  1.22.19
+- go version <br>
+  go version go1.18.4 linux/amd64
+
 ### Usage
 
+0. Install yarn dependencies: `cd front && yarn`
 1. Generate protobuf defs for backend: `make genback`
 2. Generate protobuf defs for frontend: `make genfront`
 3. Run a backend service: `make runserver`
